@@ -215,6 +215,85 @@ de más de una linea
 
 >Es una buena práctica de la programación comentar nuestro código para recordar con mayor facilidad lo que se hizo en el momento.
 
+## Salida de datos. Impresión de mensajes por pantalla en Java. Uso de print y println
+
+La salida de datos en Java, es bastante sencilla pues basta con usar una línea de código para hacerlo. Para mostrar datos por pantalla en nuestros programas Java. Para mostrar texto por pantalla en Java no es necesario hacer uso de librerías importadas ni similares, pues éstas y están incluidas en la librería java.lang que siempre es importada por defecto. Para imprimir por pantalla, se usa la clase System, el atributo out, y su método println() o print() así: 
+
+```java
+
+System.out.println("Hola mundo!") //Después de escribir el texto hace salto de línea 
+System.out.print("Hola amigo!")   //No realiza salto de línea
+
+```
+
+>System es una clase y siempre debe ir con la "S" mayúscula.
+
+## Entrada de datos. Clase Scanner
+
+La clase Scanner se usa para obtener entrada de datos del usuario y se encuentra en el package java.util.
+
+Para usar la clase Scanner, se crea un objeto de la clase y se usa cualquiera de los métodos disponibles que se encuentran en la documentación de la clase. En este ejemplo, se usara el método nextLine(), que sirve para leer cadenas de carácteres:
+
+```java
+
+import java.util.Scanner;  // Importa la clase Scanner
+
+class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);  // Crea un objeto Scanner
+    System.out.println("Enter username");
+
+    String userName = sc.nextLine();  // Lee la entrada del usuario 
+    System.out.println("Username is: " + userName);  // Salida de la entrada del usuario
+  }
+}
+
+```
+
+### Tipos de entrada
+
+En el ejemplo anterior, usamos el método nextLine(), que se usa para leer cadenas. Para leer otros tipos, consulte la siguiente tabla:
+
+| Method | Description |
+| --- | --- |
+| nextBoolean() | Reads a boolean value from the user |
+| nextByte() | Reads a byte value from the user |
+| nextDouble() | Reads a double value from the user |
+| nextFloat() | Reads a float value from the user |
+| nextInt() | Reads a int value from the user |
+| nextLine() | Reads a String value from the user |
+| nextLong() | Reads a long value from the user |
+| nextShort() | Reads a short value from the user |
+
+En el siguiente ejemplo, usamos diferentes métodos para leer datos de varios tipos:
+
+```java
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner myObj = new Scanner(System.in);
+
+    System.out.println("Enter name, age and salary:");
+
+    // String input
+    String name = myObj.nextLine();
+
+    // Numerical input
+    int age = myObj.nextInt();
+    double salary = myObj.nextDouble();
+
+    // Output input by user
+    System.out.println("Name: " + name);
+    System.out.println("Age: " + age);
+    System.out.println("Salary: " + salary);
+  }
+}
+
+```
+> Nota: Si ingresa una entrada incorrecta (por ejemplo, texto en una entrada numérica), obtendrá un mensaje de excepción/error (como "InputMismatchException").
+
 ## Tipos de datos
 
 También llamados Tipos de variable. Se llaman Tipos primitivos de variable de Java, a aquellas variables sencillas que contienen información habitual: valores boolean, caracteres y números enteros o de punto flotante.
