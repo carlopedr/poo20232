@@ -1,10 +1,6 @@
 # Java
 
-Fundamentos de Java
-
-## Como contribuir con el repositorio
-
-Visita [CONTRIBUTING.md](https://github.com/victorhtorres/Java/blob/master/CONTRIBUTING.md).
+## Fundamentos de Java
 
 ## Contenido
 - [Ambientes](#ambientes).
@@ -12,10 +8,13 @@ Visita [CONTRIBUTING.md](https://github.com/victorhtorres/Java/blob/master/CONTR
 - [Instalación JDK y Netbeans](#instalacion-jdk-y-netbeans).
 - [Mi primer programa en Java](#mi-primer-programa-en-java).
 - [Comentar el codigo](#comentar-el-codigo).
+- [Salida de datos](#salida-de-datos).
+- [Entrada de datos](#entrada-de-datos).
 - [Tipos de datos](#tipos-de-datos).
 - [Variables](#variables).
   - [Primitivos](#1-variables-de-tipo-primitivos).
-  - [Referencias](#2-variables-de-tipo-referencias).
+  - [Inferencia de tipos](#2-inferencia-de-tipos-de-datos).
+  - [Referencias](#3-variables-de-tipo-referencias).
   - [Tipos de nombres asignados a una variable](#tipos-de-nombres-asignados-a-una-variable).
 - [Operadores aritméticos](#operadores-aritmeticos).
   - [Operador modulo](#operador-modulo).
@@ -215,7 +214,9 @@ de más de una linea
 
 >Es una buena práctica de la programación comentar nuestro código para recordar con mayor facilidad lo que se hizo en el momento.
 
-## Salida de datos. Impresión de mensajes por pantalla en Java. Uso de print y println
+## Salida de datos 
+
+### Impresión de mensajes por pantalla. Uso de print y println
 
 La salida de datos en Java, es bastante sencilla pues basta con usar una línea de código para hacerlo. Para mostrar datos por pantalla en nuestros programas Java. Para mostrar texto por pantalla en Java no es necesario hacer uso de librerías importadas ni similares, pues éstas y están incluidas en la librería java.lang que siempre es importada por defecto. Para imprimir por pantalla, se usa la clase System, el atributo out, y su método println() o print() así: 
 
@@ -228,7 +229,9 @@ System.out.print("Hola amigo!")   //No realiza salto de línea
 
 >System es una clase y siempre debe ir con la "S" mayúscula.
 
-## Entrada de datos. Clase Scanner
+## Entrada de datos
+
+### Clase Scanner
 
 La clase Scanner se usa para obtener entrada de datos del usuario y se encuentra en el package java.util.
 
@@ -250,7 +253,7 @@ class Main {
 
 ```
 
-### Tipos de entrada
+#### Tipos de entrada
 
 En el ejemplo anterior, usamos el método nextLine(), que se usa para leer cadenas. Para leer otros tipos, consulte la siguiente tabla:
 
@@ -309,6 +312,8 @@ La siguiente tabla muestra la cantidad de valores que puede almacenar cada tipo 
 
 ![Tipos de datos primitivos en java](images/tipos_datos_primitivos_java.png)
 
+
+
 ## Variables
 Una variable es un nombre que contiene un valor que puede cambiar a lo largo del programa. De acuerdo con el tipo de información que contienen, en Java hay dos tipos principales de variable:
 
@@ -316,7 +321,47 @@ Una variable es un nombre que contiene un valor que puede cambiar a lo largo del
 
 Están definidas mediante un valor único que puede ser entero, de punto flotante, carácter o booleano. Java permite distinta precisión y distintos rangos de valores para estos tipos de variables (char, byte, short, int, long, float, double, boolean). Ejemplos de variables de tipo primitivo podrían ser: 123, 3456754, 3.1416, 12e-09, 'A', TRUE, etc...
 
-### 2. Variables de tipo referencias:
+### 2. Inferencia de tipos de datos: 
+
+#### Palabra reservada var
+
+La palabra reservada **var** se introdujo en Java 10. La inferencia de tipo usa la palabra reservada (keyword) **var** con la que detecta automáticamente el tipo de datos de una variable en función del contexto circundante. Los siguientes ejemplos explican dónde se usa var: 
+
+```java
+class Demo1 {
+  
+    public static void main(String[] args)
+    {
+  
+        // int
+        var x = 100;
+  
+        // double
+        var y = 1.90;
+  
+        // char
+        var z = 'a';
+  
+        // string
+        var p = "tanu";
+  
+        // boolean
+        var q = false;
+  
+        // type inference is used in var keyword in which it
+        // automatically detects the datatype of a variable
+        System.out.println(x);
+        System.out.println(y);
+        System.out.println(z);
+        System.out.println(p);
+        System.out.println(q);
+    }
+}
+
+```
+> La palabra reservada **var** se debe usar al declarar variables en un método de clase y requieren ser iniclaizadas en la misma sentencia para poder inferir el tipo. En otros contextos puede generar error.
+
+### 3. Variables de tipo referencias:
 
 Son objetos en java de una determinada clase y no hacen parte del sistema operativo, como por ejemplo: arrays (arreglos), String (cadenas), etc... Una forma de indentificarlos es cuando los declaran en el tipo de la variable:
 
