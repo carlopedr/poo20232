@@ -14,30 +14,21 @@ public class EstructuraWhile {
         n = Integer.parseInt(
                 JOptionPane.showInputDialog("Digite el exponente: ")
                 );
-
-
-
         if (n>=0){
-
             i=1; //Debo darle valor a la variable que va a servir como contador antes de entrar al bucle.
-
             while(i<=n){
-                p*=x;
-                i++; //Aquí modifico el contador porque sino entonces me quedaría un bucle infinito.
+                p*=x; //p=p*x
+                i++;  //Aquí modifico el contador porque sino entonces me quedaría un bucle infinito.
             }
         }
-
         else{
-
             i=-1;
-
             while(i>=n){
                 p*=1/x;
                 i--;
             }
 
         }
-
         System.out.println("La potencia es = " + p);
 
         /*Supongamos que el usuario digite como base x=5 y como exponente n=2, entonces el resultado que debe mostrar en pantalla es: La potencia es = 25

@@ -5,10 +5,8 @@ import javax.swing.*;
 
 public class EstructuraDoWhile {
    public static void main (String args[]){
-
        double x, p=1;
        int n, i=1;
-
        x = Double.parseDouble(
                JOptionPane.showInputDialog("Digite la base: ")
                );
@@ -18,7 +16,7 @@ public class EstructuraDoWhile {
 
        if(n>=0){
            do{
-               p*=x;
+               p*=x;//p=p*x
                i++;
            }while(i<=n);
        }else{
