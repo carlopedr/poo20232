@@ -172,9 +172,7 @@ public class MiPrimeraAppEnJava {
     public static void main(String[] args) {
 
         JOptionPane.showMessageDialog(null,"Hola Mundo!"); //Muestro en pantalla el mensaje "Hola Mundo!"
-
     }
-
 }
 
 ```
@@ -791,42 +789,27 @@ public class EstructuraWhile {
     public static void main (String args[]){
         double x, p=1;
         int n, i;
-        x = Double.parseDouble(
-                JOptionPane.showInputDialog("Digite la base: ")
-                );
-        n = Integer.parseInt(
-                JOptionPane.showInputDialog("Digite el exponente: ")
-                );
-
-
-
+        x = Double.parseDouble(JOptionPane.showInputDialog("Digite la base: "));
+        n = Integer.parseInt(JOptionPane.showInputDialog("Digite el exponente: "));
         if (n>=0){
-
             i=1; //Debo darle valor a la variable que va a servir como contador antes de entrar al bucle.
-
             while(i<=n){
                 p*=x;
                 i++; //Aquí modifico el contador porque sino entonces me quedaría un bucle infinito.
             }
         }
-
         else{
-
             i=-1;
-
             while(i>=n){
                 p*=1/x;
                 i--;
             }
-
         }
-
         System.out.println("La potencia es = " + p);
 
         /*Supongamos que el usuario digite como base x=5 y como exponente n=2, entonces el resultado que debe mostrar en pantalla es: La potencia es = 25
          * Supongamos que el usuario digite como base x=5 y como exponente n=-2, entonces el resultado que debe mostrar en pantalla es: La potencia es 0.04
          */
-
     }
 } //fin del programa
 
@@ -856,23 +839,18 @@ import javax.swing.*;
 
 public class do_whileee {
    public static void main (String args[]){
-
        double x, p=1;
        int n, i=1;
-
-       x = Double.parseDouble(
-               JOptionPane.showInputDialog("Digite la base: ")
-               );
-       n = Integer.parseInt(
-               JOptionPane.showInputDialog("Digite el exponente: ")
-               );
+       x = Double.parseDouble(JOptionPane.showInputDialog("Digite la base: "));
+       n = Integer.parseInt(JOptionPane.showInputDialog("Digite el exponente: "));
 
        if(n>=0){
            do{
                p*=x;
                i++;
            }while(i<=n);
-       }else{
+       }
+       else{
            do{
                p*=1/x;
                i--;
@@ -880,11 +858,9 @@ public class do_whileee {
        }
 
        System.out.println("La pontencia es: " + p);
-
         /*Supongamos que el usuario digite como base x=5 y como exponente n=2, entonces el resultado que debe mostrar en pantalla es: La potencia es = 25
-         * Supongamos que el usuario digite como base x=5 y como exponente n=-2, entonces el resultado que debe mostrar en pantalla es: La potencia es 0.04
-         */
-
+        * Supongamos que el usuario digite como base x=5 y como exponente n=-2, entonces el resultado que debe mostrar en pantalla es: La potencia es 0.04
+        */
     }
 }
 
@@ -988,6 +964,113 @@ for(int i=0; i < biarreglo.length; i++){
 	}
 }
 
+```
+
+#### Ordenamiento de  arrays en Java. Método Arrays.sort()
+Para ordenar arrays de cualquier tipo Java dispone del método sort de la clase Arrays. Para utilizarlo es necesario incluir el **import java.util.Arrays;**
+El siguiente  ejemplo ordena de forma ascendente un  array de Strings:
+```java
+	String[] nombres = {"juan", "pedro", "ana", "maria", "felipe", "luis", "eduardo"};
+        Arrays.sort(nombres);
+        for (String s : nombres) {
+            System.out.println(s);
+        }
+```
+**Arrays.sort** ordena de forma ascendente (de menor a mayor). Para ordenar un array de forma descendente (de mayor a menor) hay que indicarlo utilizando el método reverseOrder() de la clase Collections.
+Para utilizar reverseOrder es necesario incluir el **import java.util.Collections;**
+Por ejemplo, para ordenar el array nombres de forma descendente escribimos la instrucción Arrays.sort de la siguiente forma:
+```java
+	Arrays.sort(nombres, Collections.reverseOrder());
+```
+También tenemos la opción de ordenar solo una parte del array, indicando la posición del elemento inicial y la del elemento final (que no se incluye en la ordenación).
+Por ejemplo, para ordenar solo los elementos 1, 2 y 3 ("pedro", "ana", "maria") del array nombres escribimos la instrucción de esta forma:
+```java
+	Arrays.sort(nombres, 1, 4);
+```
+El 1 indica la posición del elemento donde comienza la ordenación y el 4 indica la posición del primer elemento que no entra en la ordenación.
+El contenido del array después de esta ordenación es el siguiente:
+```
+juan
+ana
+maria
+pedro
+felipe
+luis
+eduardo
+```
+Vemos que solo se han ordenado los elementos 1, 2 y 3. El resto quedan igual. 
+
+También podemos ordenar solo una parte del array en orden inverso. Por ejemplo, para ordenar solo los elementos 1, 2 y 3 en orden inverso:
+```java
+	Arrays.sort(nombres, 1,4, Collections.reverseOrder());
+```
+
+El contenido del array es ahora:
+```
+juan
+pedro
+maria
+ana
+felipe
+luis
+eduardo
+```
+Con Arrays.sort podemos ordenar arrays de cualquier tipo de datos. Por ejemplo, para ordenar un array de enteros:
+```java
+	int [] numeros = {3, 5, 1, 2, 1, 7, 0, -1};
+	Arrays.sort(numeros);                                                                                             
+	//mostrarlo ordenado
+	for (int n : numeros) {
+     		System.out.println(n);                                                                                       
+	}
+```
+Collections.reverOrder() solo funciona para arrays de objetos. Por este motivo si queremos ordenar de forma descendente arrays de tipos de datos simples debemos utilizar la clase envolvente equivalente al tipo de dato básico. Puedes ver las clases envolventes que corresponden a cada tipo de dato en esta entrada.
+Por ejemplo, para ordenar un array de enteros forma descendente hay que declararlo de tipo Integer en lugar de int.
+```java
+	Integer [] numeros = {3, 5, 1, 2, 1, 7, 0, -1};
+	Arrays.sort(numeros, Collections.reverseOrder());                                                                 
+	for (int n : numeros) {
+       		System.out.println(n);                                                                                     
+	}
+```
+
+
+#### Números aleatorios - Math random
+En el desarrollo de aplicaciones, suele ser necesario generar números aleatorios. Para hacer esto, Java proporciona las clases **java.lang.Math** y **java.util.Random**.
+
+##### Clase java.lang.Math en Java
+La clase Math, se encuentra en paquete java.lang. Esta clase contiene un método estático Math.random() que genera números aleatorios de tipo double.
+
+Math.random()  proporciona un número positivo mayor o igual que 0,0 y menor que 1,0. 
+
+Si se usa Math.random() se puede optar por utilizarlo con o sin parámetros. Los parámetros se utilizan para indicar el intervalo o rango de números dentro del cual se generarán los valores aleatorios.
+
+###### Sintaxis del Método Math.random() en Java
+
+A continuación se puede ver la sintaxis necesaria para poder usar el método Math.random() en el siguiente ejemplo:  
+
+- Genera un numero aleatorio double entre 1 y 30
+```java
+	//Math.random()*numeroMaximo+numeroMinimo;
+        double resultado = Math.random()*30+1;
+```
+
+##### Clase java.util.Random en Java
+La clase Random en el paquete java.util.Random permite generar números aleatorios, pero a diferencia del método Math.random() es necesario instanciarla. Para instanciar se puede emplear un constructor sin parámetros o bien introducir una semilla.
+
+La clase java.util.Random  tiene varios métodos como nextInt(), nextFloat(), nextDouble(), nextLong(), etc. nextInt() devuelve un pseudoaleatorio de tipo int con valores entre 0 y 232 producidos con aproximadamente la misma probabilidad, mientras que los métodos nextFloat() y nextDouble() permiten obtener números de coma flotante entre valores de tipo double entre 0,0 y 1,0. En el caso de nextLong, éste devuelve un valor pseudoaleatorio largo, uniformemente distribuido de la secuencia del generador de números aleatorios.
+
+###### Sintaxis del Método Random() en Java
+La sintaxis que se debe usar para generar números aleatorios con el método Random() puede verse en el siguiente ejemplo:
+```java
+import java.util.Random;
+    public class Programa {
+        public static void main(String arg[ ]) {
+              //Generación de número aleatorio e impresión en pantalla con System.out.println.
+              Random random = new Random();
+              System.out.println("Número aleatorio entre [0,5[ : "+rnd.nextDouble());
+         }
+     }
 ```
 
 ### Usos habituales en los arreglos
