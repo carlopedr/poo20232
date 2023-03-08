@@ -966,6 +966,75 @@ for(int i=0; i < biarreglo.length; i++){
 
 ```
 
+#### Ordenamiento de  arrays en Java. Método Arrays.sort()
+Para ordenar arrays de cualquier tipo Java dispone del método sort de la clase Arrays. Para utilizarlo es necesario incluir el **import java.util.Arrays;**
+El siguiente  ejemplo ordena de forma ascendente un  array de Strings:
+```java
+	String[] nombres = {"juan", "pedro", "ana", "maria", "felipe", "luis", "eduardo"};
+        Arrays.sort(nombres);
+        for (String s : nombres) {
+            System.out.println(s);
+        }
+```
+**Arrays.sort** ordena de forma ascendente (de menor a mayor). Para ordenar un array de forma descendente (de mayor a menor) hay que indicarlo utilizando el método reverseOrder() de la clase Collections.
+Para utilizar reverseOrder es necesario incluir el **import java.util.Collections;**
+Por ejemplo, para ordenar el array nombres de forma descendente escribimos la instrucción Arrays.sort de la siguiente forma:
+```java
+	Arrays.sort(nombres, Collections.reverseOrder());
+```
+También tenemos la opción de ordenar solo una parte del array, indicando la posición del elemento inicial y la del elemento final (que no se incluye en la ordenación).
+Por ejemplo, para ordenar solo los elementos 1, 2 y 3 ("pedro", "ana", "maria") del array nombres escribimos la instrucción de esta forma:
+```java
+	Arrays.sort(nombres, 1, 4);
+```
+El 1 indica la posición del elemento donde comienza la ordenación y el 4 indica la posición del primer elemento que no entra en la ordenación.
+El contenido del array después de esta ordenación es el siguiente:
+```
+juan
+ana
+maria
+pedro
+felipe
+luis
+eduardo
+```
+Vemos que solo se han ordenado los elementos 1, 2 y 3. El resto quedan igual. 
+
+También podemos ordenar solo una parte del array en orden inverso. Por ejemplo, para ordenar solo los elementos 1, 2 y 3 en orden inverso:
+```java
+	Arrays.sort(nombres, 1,4, Collections.reverseOrder());
+```
+
+El contenido del array es ahora:
+```
+juan
+pedro
+maria
+ana
+felipe
+luis
+eduardo
+```
+Con Arrays.sort podemos ordenar arrays de cualquier tipo de datos. Por ejemplo, para ordenar un array de enteros:
+```java
+	int [] numeros = {3, 5, 1, 2, 1, 7, 0, -1};
+	Arrays.sort(numeros);                                                                                             
+	//mostrarlo ordenado
+	for (int n : numeros) {
+     		System.out.println(n);                                                                                       
+	}
+```
+Collections.reverOrder() solo funciona para arrays de objetos. Por este motivo si queremos ordenar de forma descendente arrays de tipos de datos simples debemos utilizar la clase envolvente equivalente al tipo de dato básico. Puedes ver las clases envolventes que corresponden a cada tipo de dato en esta entrada.
+Por ejemplo, para ordenar un array de enteros forma descendente hay que declararlo de tipo Integer en lugar de int.
+```java
+	Integer [] numeros = {3, 5, 1, 2, 1, 7, 0, -1};
+	Arrays.sort(numeros, Collections.reverseOrder());                                                                 
+	for (int n : numeros) {
+       		System.out.println(n);                                                                                     
+	}
+```
+
+
 #### Números aleatorios - Math random
 En el desarrollo de aplicaciones, suele ser necesario generar números aleatorios. Para hacer esto, Java proporciona las clases **java.lang.Math** y **java.util.Random**.
 
