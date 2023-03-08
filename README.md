@@ -966,6 +966,44 @@ for(int i=0; i < biarreglo.length; i++){
 
 ```
 
+#### Números aleatorios - Math random
+En el desarrollo de aplicaciones, suele ser necesario generar números aleatorios. Para hacer esto, Java proporciona las clases **java.lang.Math** y **java.util.Random**.
+
+##### Clase java.lang.Math en Java
+La clase Math, se encuentra en paquete java.lang. Esta clase contiene un método estático Math.random() que genera números aleatorios de tipo double.
+
+Math.random()  proporciona un número positivo mayor o igual que 0,0 y menor que 1,0. 
+
+Si se usa Math.random() se puede optar por utilizarlo con o sin parámetros. Los parámetros se utilizan para indicar el intervalo o rango de números dentro del cual se generarán los valores aleatorios.
+
+###### Sintaxis del Método Math.random() en Java
+
+A continuación se puede ver la sintaxis necesaria para poder usar el método Math.random() en el siguiente ejemplo:  
+
+- Genera un numero aleatorio double entre 1 y 30
+```java
+	//Math.random()*numeroMaximo+numeroMinimo;
+        double resultado = Math.random()*30+1;
+```
+
+##### Clase java.util.Random en Java
+La clase Random en el paquete java.util.Random permite generar números aleatorios, pero a diferencia del método Math.random() es necesario instanciarla. Para instanciar se puede emplear un constructor sin parámetros o bien introducir una semilla.
+
+La clase java.util.Random  tiene varios métodos como nextInt(), nextFloat(), nextDouble(), nextLong(), etc. nextInt() devuelve un pseudoaleatorio de tipo int con valores entre 0 y 232 producidos con aproximadamente la misma probabilidad, mientras que los métodos nextFloat() y nextDouble() permiten obtener números de coma flotante entre valores de tipo double entre 0,0 y 1,0. En el caso de nextLong, éste devuelve un valor pseudoaleatorio largo, uniformemente distribuido de la secuencia del generador de números aleatorios.
+
+###### Sintaxis del Método Random() en Java
+La sintaxis que se debe usar para generar números aleatorios con el método Random() puede verse en el siguiente ejemplo:
+```java
+import java.util.Random;
+    public class Programa {
+        public static void main(String arg[ ]) {
+              //Generación de número aleatorio e impresión en pantalla con System.out.println.
+              Random random = new Random();
+              System.out.println("Número aleatorio entre [0,5[ : "+rnd.nextDouble());
+         }
+     }
+```
+
 ### Usos habituales en los arreglos
 
 #### Busqueda lineal
