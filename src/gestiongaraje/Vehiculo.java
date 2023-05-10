@@ -13,13 +13,20 @@ public class Vehiculo {
     
     //Constructores
 
-    public Vehiculo(String marca, double precio, int cilindrada) {
-        this.marca = marca;
-        this.precio = precio;
-        this.cilindrada = cilindrada;
-        this.cuotaMesGaraje=CUOTA;
-        this.calcularImpuestoCirculacion();
+    public Vehiculo(String matricula, String marca, double precio, int cilindrada) {
+        if (this.matricular(matricula)) {
+            this.marca = marca;
+            this.precio = precio;
+            this.cilindrada = cilindrada;
+            this.calcularImpuestoCirculacion();
+            this.cuotaMesGaraje=CUOTA;
+        }
     }
+
+    public Vehiculo() {
+    }
+    
+    
     //Getters y Setters
     public String getMatricula() {
         return matricula;
@@ -88,7 +95,6 @@ public class Vehiculo {
         }
         return res;
     }
-    
     
     @Override
     public String toString() {
