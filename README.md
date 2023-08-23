@@ -717,7 +717,7 @@ Ejemplo:
 
 ```java
 
-for(int i=1; j=i+10; i<5; i++, j=2*i){
+for(int i=1, j=i+10; i<5; i++, j=2*i){
 	System.out.println("i= " + i + "j= " + j);
 }
 /*El siguiente bloque de ejemplo imprimirá los siguientes datos:
