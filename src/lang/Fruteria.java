@@ -28,6 +28,15 @@ public class Fruteria {
         }else{
             vrDto=(int)(vrBruto*0.2);
         }
+        if(kilos<=2){
+            vrDto=0;
+        }else if(kilos<=5){
+            vrDto=(int)(vrBruto*0.1);
+        }else if(kilos<=10){
+            vrDto=(int)(vrBruto*0.15);
+        }else{
+            vrDto=(int)(vrBruto*0.2);
+        }
         vrPago=vrBruto-vrDto;
         System.out.println("Precio:     "+precio);
         System.out.println("Kilos:   "+kilos);
