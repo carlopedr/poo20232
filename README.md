@@ -716,19 +716,15 @@ La sentencia(s) de Inicialización de variable(s) se ejecuta(n) al comienzo del 
 Ejemplo:
 
 ```java
-
 for(int i=1, j=i+10; i<5; i++, j=2*i){
 	System.out.println("i= " + i + "j= " + j);
 }
 /*El siguiente bloque de ejemplo imprimirá los siguientes datos:
-
 i= 1	j= 11
 i= 2	j= 4
 i= 3	j= 6
 i= 4	j= 8
-
 */
-
 ```
 
 ### Estructura for each
@@ -737,19 +733,16 @@ Es una versión mejorada de la estructura del `for` tradicional y sirve especial
 
 Sintaxis:
 
-```java
-
+```plain
 for (<Tipo> elemento : Collection){
       //TODO: Bock code here...
       // la variable temporal elemento, contiene cada dato de la colección a iterar.
     }
-
 ```
 
 Ejemplo:
 
 ```java
-
     String[] arreglo = new String[3];
     arreglo[0] = "Victor";
     arreglo[1] = "Jaime";
@@ -758,11 +751,7 @@ Ejemplo:
     for (String elemento : arreglo){
       System.out.println(elemento);	// Imprime cada elemento del arreglo.
     }
-
 ```
-
-
-
 ### Estructura while
 
 En el ciclo while se ejecutan todas las instrucciones contenidas en el bloque mientras la expresión lógica sea verdadera (true); estas se ejecutan n veces, hasta cuándo la expresión lógica dé como resultado falso (false) lo cual hace que finalice el ciclo.
@@ -807,7 +796,6 @@ public class EstructuraWhile {
          */
     }
 } //fin del programa
-
 ```
 
 ### Estructura do-while
@@ -852,7 +840,7 @@ public class Do_whileee {
     }
 }
 ```
-##Cómo generar un número aleatorio en un rango de valores en Java
+## Cómo generar un número aleatorio en un rango de valores en Java
 
 Hay varias formas de generar un número aleatorio. En este primer caso vamos a usar la librería Math para Java. Dentro de esta librería vamos a disponer del método random, como no podía ser de otra manera, claro.
 En Java, el siguiente código genera un número aleatorio entre dos valores, un mínimo y un máximo:
@@ -904,29 +892,19 @@ char vocals []= {'a','e','i','o','u'};
 String dias[]={"lunes", "martes", "miercoles", "jueves", "viernes", "sabado"};
 
 ```
-
 También es muy común llenar los arreglos con el uso de ciclos:
-
 ```java
-
 String nombres[] = new String [40];
-
 for (int i=0 ; i < nombres.length ; i++){
 	nombres[i] =JoptionPane.showInputDialog("Ingrese nombre "+ (i + 1)+":" );
 }
-
 ```
-
 Como también, el uso de ciclos para imprimir los datos que están almacenados en el arreglo:
-
 ```java
-
 String nombres[] = new String [40];
-
 for (int i=0 ; i < nombres.length ; i++){
 	JOptionPane.showMessageDialog(null, nombres[i]);
 }
-
 ```
 
 ### Arreglos bidimensionales
