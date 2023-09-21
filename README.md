@@ -865,7 +865,21 @@ public class do_whileee {
 }
 
 ```
-
+#Cómo generar un número aleatorio en un rango de valores en Java
+Hay varias formas de generar un número aleatorio. En este primer caso vamos a usar la librería Math para Java. Dentro de esta librería vamos a disponer del método random, como no podía ser de otra manera, claro.
+En Java, el siguiente código genera un número aleatorio entre dos valores, un mínimo y un máximo:
+```java
+int n = (int) (Math.random() * (<número_máximo + 1> - <número_mínimo>)) + <numero_mínimo>;
+```
+Por ejemplo, si queremos elegir un número aleatorio entre los valores 18 y 65, ambos inclusive, sería así:
+```java
+int n = (int) (Math.random() * (66 - 18)) + 18;
+```
+Otra forma de hacerlo es también:
+```java
+Random r = new Random();
+int n = r.nextInt(6-4)+4;
+```
 ## Arreglos
 
 En Java, un arreglo es un grupo de variables (llamadas elementos o componentes) que contienen valores, todos del mismo tipo. Recuerde que los tipos en Java se dividen en dos categorías: tipos primitivos y tipos de referencia. Los arreglos son objetos, por lo que se consideran como tipos de referencia. Los
