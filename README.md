@@ -770,21 +770,16 @@ En el ciclo while se ejecutan todas las instrucciones contenidas en el bloque mi
 Sintaxis:
 
 ```plain
-
 while (Expresión lógica) {
 [bloque de instrucciones]
 }
-
 ```
 
 Ejemplo:
 
 ```java
-
 // Escriba un algoritmo que dados los valores X y N, permita calcular X^N. [Hacer con estructura WHILE]
-
 import javax.swing.*;
-
 public class EstructuraWhile {
     public static void main (String args[]){
         double x, p=1;
@@ -822,22 +817,16 @@ Es similar al bucle While pero con la particularidad de que el control está al 
 Sintaxis:
 
 ```plain
-
 do {
 [bloque de instrucciones]
 } while (Expresión lógica);
-
 ```
-
 Ejemplo:
 
 ```java
-
 // Ejemplo: Escriba un algoritmo que dados los valores X y N, permita calcular X^N. [Hacer con estructura DO WHILE]
-
 import javax.swing.*;
-
-public class do_whileee {
+public class Do_whileee {
    public static void main (String args[]){
        double x, p=1;
        int n, i=1;
@@ -856,19 +845,18 @@ public class do_whileee {
                i--;
            }while(i>=n);
        }
-
        System.out.println("La pontencia es: " + p);
         /*Supongamos que el usuario digite como base x=5 y como exponente n=2, entonces el resultado que debe mostrar en pantalla es: La potencia es = 25
         * Supongamos que el usuario digite como base x=5 y como exponente n=-2, entonces el resultado que debe mostrar en pantalla es: La potencia es 0.04
         */
     }
 }
-
 ```
-#Cómo generar un número aleatorio en un rango de valores en Java
+##Cómo generar un número aleatorio en un rango de valores en Java
+
 Hay varias formas de generar un número aleatorio. En este primer caso vamos a usar la librería Math para Java. Dentro de esta librería vamos a disponer del método random, como no podía ser de otra manera, claro.
 En Java, el siguiente código genera un número aleatorio entre dos valores, un mínimo y un máximo:
-```java
+```plain
 int n = (int) (Math.random() * (<número_máximo + 1> - <número_mínimo>)) + <numero_mínimo>;
 ```
 Por ejemplo, si queremos elegir un número aleatorio entre los valores 18 y 65, ambos inclusive, sería así:
