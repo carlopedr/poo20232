@@ -3,9 +3,9 @@ package poo.bicicleta;
 
 public class Bicicleta {
     //Atributos
-    public int velocidadActual;
-    public int platoActual;
-    public int pinonActual;
+    private int velocidadActual;
+    private int platoActual;
+    private int pinonActual;
     
     //Constructor
     public Bicicleta(int velocidadActual, int platoActual, int pinonActual) {
@@ -14,6 +14,38 @@ public class Bicicleta {
         this.pinonActual = pinonActual;
     }
 
+    public Bicicleta() {
+        this.velocidadActual=0;
+        this.platoActual=1;
+        this.pinonActual=1;
+    }
+
+    //Métodos set y get
+
+    public int getVelocidadActual() {
+        return velocidadActual;
+    }
+
+    public void setVelocidadActual(int velocidadActual) {
+        this.velocidadActual = velocidadActual;
+    }
+
+    public int getPlatoActual() {
+        return platoActual;
+    }
+
+    public void setPlatoActual(int platoActual) {
+        this.platoActual = platoActual;
+    }
+
+    public int getPinonActual() {
+        return pinonActual;
+    }
+
+    public void setPinonActual(int pinonActual) {
+        this.pinonActual = pinonActual;
+    }
+        
     //Métodos
     public void acelerar(){
         this.velocidadActual*=2;
