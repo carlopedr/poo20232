@@ -25,7 +25,7 @@ public class Test {
         System.out.println("BM: "+bMt.toString());
         bMt.acelerar();
         System.out.println("BM Ac: "+bMt.toString());
-        
+        bMt.imprime();
     }
     
 }

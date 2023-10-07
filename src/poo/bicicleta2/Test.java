@@ -18,7 +18,7 @@ public class Test {
         System.out.println("Bici1: "+bici1.toString());
         System.out.println("PI:"+Math.PI);
         //bici1.NUMRUEDAS=4;
-        System.out.println("Num ruedas bici1:"+Bicicleta.NUMRUEDAS);
+        //System.out.println("Num ruedas bici1:"+Bicicleta.NUMRUEDAS);
         //Math.PI=10;
         //bici1.velocidadActual=30;
         bici1.setVelocidadActual(30);
@@ -26,5 +26,9 @@ public class Test {
         System.out.println("Bici1: "+bici1.toString());
         int va=bici1.getVelocidadActual();
         System.out.println("VA: "+va);
+        BicicletaMontana bMt=new BicicletaMontana(9,18,32,15);
+        System.out.println(bMt.toString());
+        bMt.acelerar();
+        System.out.println("Acelerada:"+bMt.toString());
     }
 }

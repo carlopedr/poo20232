@@ -1,37 +1,32 @@
 
 package poo.bicicleta2;
 
-public class Bicicleta {
+public class Bicicleta extends Vehiculo{
     //Estado: atributos
-    private int velocidadActual;
+    //private int velocidadActual;
     private int platoActual;
     private int pinonActual;
-    public final static int NUMRUEDAS=2;
+    //public final static int NUMRUEDAS=2;
     
     //Constructor
-    public Bicicleta(int velocidadActual, int platoActual, int pinonActual) {
-        this.velocidadActual = velocidadActual;
+
+    public Bicicleta(int platoActual, int pinonActual, int velocidadActual) {
+        super(velocidadActual);
         this.platoActual = platoActual;
         this.pinonActual = pinonActual;
     }
+    
 
     public Bicicleta() {
-        this.velocidadActual=0;
+        //this.velocidadActual=0;
+        super.setVelocidadActual(0);
         this.platoActual=1;
         this.pinonActual=1;
     }
 
     //Métodos set y get
 
-    public int getVelocidadActual() {
-        return velocidadActual;
-    }
-
-    public void setVelocidadActual(int velocidadActual) {
-        this.velocidadActual = velocidadActual;
-    }
-
-    public int getPlatoActual() {
+        public int getPlatoActual() {
         return platoActual;
     }
 
@@ -47,15 +42,17 @@ public class Bicicleta {
         this.pinonActual = pinonActual;
     }
     
-    
-
     //Métodos
+    @Override
     public void acelerar(){
-        this.velocidadActual*=2;
+        super.setVelocidadActual(super.getVelocidadActual()*2);
+        //this.velocidadActual*=2;
     }
     
+    @Override
     public void frenar(){
-        this.velocidadActual/=2;
+        super.setVelocidadActual(super.getVelocidadActual()/2);
+        //this.velocidadActual/=2;
     }
     
     public void cambiarPlato(int plato){
@@ -68,7 +65,7 @@ public class Bicicleta {
 
     @Override
     public String toString() {
-        return "Bicicleta{" + "velocidadActual=" + velocidadActual + ", platoActual=" + platoActual + ", pinonActual=" + pinonActual + '}';
+        return "Bicicleta{" + "velocidadActual=" + super.getVelocidadActual() + ", platoActual=" + platoActual + ", pinonActual=" + pinonActual + '}';
     }
 
     

@@ -12,6 +12,9 @@ public class Persona {
         this.dni = dni;
     }
 
+    public Persona() {
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -78,6 +81,10 @@ tanto devolver un valor negativo)*/
             return true;
         else
             return false;
+    }
+    
+    public void imprimir(){
+        System.out.println("Imprime Persona");
     }
 
     @Override
