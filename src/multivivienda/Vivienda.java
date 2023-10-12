@@ -1,6 +1,6 @@
 package multivivienda;
 
-public class Vivienda {
+public abstract class Vivienda implements IVivienda{
     private String calle;
     private double precio;
     private int superficieEnMetros;
@@ -37,4 +37,16 @@ public class Vivienda {
     public void calcularPrecio(){
         this.precio=this.superficieEnMetros*1000;
     }
+
+    @Override
+    public String toString() {
+        return "Vivienda{" + "calle=" + calle + ", precio=" + precio + ", superficieEnMetros=" + superficieEnMetros + '}';
+    }
+    
+    @Override
+    public void aumentarPrecio(int aumento) {
+        this.precio+=aumento;
+    }
+    
+    public abstract double impuestoMunicipal();
 }

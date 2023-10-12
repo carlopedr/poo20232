@@ -32,4 +32,17 @@ public class Chalet extends Vivienda{
         super.setPrecio(precio);
         //this.precio=this.superficieEnMetros*1300;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+ " Chalet{" + "numParcela=" + numParcela + ", conPiscina=" + conPiscina + '}';
+    }
+    
+    @Override
+    public double impuestoMunicipal() {
+        double imp=super.getPrecio()*0.05;;
+        if(this.conPiscina)
+            imp+=200;
+        return imp;
+    }
 }

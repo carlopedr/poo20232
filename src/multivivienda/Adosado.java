@@ -16,6 +16,15 @@ public class Adosado extends Vivienda {
     public void setNumPlantas(int numPlantas) {
         this.numPlantas = numPlantas;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+" Adosado{" + "numPlantas=" + numPlantas + '}';
+    }
     
+    @Override
+    public double impuestoMunicipal() {
+        return super.getPrecio()*0.05;
+    }
     
 }
