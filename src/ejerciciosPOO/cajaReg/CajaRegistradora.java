@@ -1,6 +1,6 @@
 package ejerciciosPOO.cajaReg;
 
-public class CajaRegistradora implements ICajaRegistradora{
+public class CajaRegistradora implements ICajaRegistradora {
 
     @Override
     public String getNombre() {
